@@ -1,0 +1,140 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Estimator</title>
+  <link rel="stylesheet" href="/public/stylesheets/gstest.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <script>
+    function clicked(){
+    let prod = document.querySelector(".prod").value;
+    let turn = document.querySelector(".turn").value;
+    let amtData = [{
+      prod: 'Coffee',
+      amout: 240,
+      per: 5
+  }, {
+      prod: 'Robar steel',
+      amout: 40,
+      per: 18
+  }, {
+      prod: 'Tea',
+      amout: 192,
+      per: 5
+  }, {
+      prod: 'Merchantbar',
+      amout: 42,
+      per: 18
+  }];
+  console.log(prod+turn);
+  
+  let gstCalc = (amount, product) => {
+      let gstpercent;
+      amtData.forEach((d)=>{
+          if(product === d.prod)
+          {
+              gstpercent = d.per;
+          }
+      })
+      gst = (amount * gstpercent) / 100;
+      console.log(gst);
+      let net =  parseInt(amount)+parseInt(gst);
+      console.log(gstpercent/2);
+      return `RS:${net}-${gstpercent}%-${gstpercent/2}`;
+  }
+  let out = gstCalc(turn,prod);
+  document.getElementById("per").innerHTML = out.split('-')[1];
+  document.getElementById("est").innerHTML = out.split('-')[0];
+  document.getElementById("s").innerHTML = out.split('-')[2];
+  document.getElementById("c").innerHTML = out.split('-')[2];
+    }
+  
+  </script>
+  <div id="wrapper" style="background: url(../image/1.jpg);">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/Gst-Estimator">GST</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="/Gst-Estimator">Home</a></li>
+            <li><a href="/company-details">Company Details</a></li>
+            <li class="active"><a href="/Gst-Estimator">GST Estimator</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="table" style="color:white;">
+      <center>
+        <h3><b>GST ESTIMATOR</b></h3>
+      </center>
+    </div>
+    <div id="signin">
+      <form action="Gst-Estimator" method="POST">
+        <br>
+        <div class="form-group">
+          <label for="name">Product Name:</label>
+          <input type="text" class="prod" id="username" name="prod" required autofocus>
+        </div><br>
+        <div class="form-group">
+          <label for="name">Turnover:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="username" class="turn" name="turnover" required autofocus>
+        </div>
+        <div class="radio">
+          <center>
+            <label style="color:white;"><input type="radio" name="optradio" checked id="radio">Monthly</label>&nbsp;&nbsp;&nbsp;
+            <label style="color:white;"><input type="radio" name="optradio" id="radio">Annually</label>
+          </center>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit" style="color:white;" onclick="clicked()">
+        </div>
+      </form>
+    </div>
+    <hr>
+    <div id="table" style="color:white;">
+      <center>
+        <h3><b>ESTIMATED RESULT</b></h3>
+      </center>
+    </div>
+    <br>
+    <div id="signin">
+      <div class="form-group">
+        <label for="name">GST(%): <span style="color:white;font-size:15px;" id="per"> </span></label><br><br>
+        <label for="name">SGST(%): <span style="color:white;font-size:15px;" id="s"> </span></label><br><br>
+        <label for="name">CGST(%): <span style="color:white;font-size:15px;" id="c"> </span></label>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="name">Estimated Value: <span style="color:white;font-size:20px;" id="est">
+          </span></label>
+      </div>
+    </div>
+    <b>
+      <p style="color:white;">&nbsp;&nbsp;&nbsp;(<span style="color:red;"> * </span>The value displayed above is the
+        amount estimated as goods and services tax.)</p>
+    </b>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</body>
+
+</html>

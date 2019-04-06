@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Company Details</title>
+	<link rel="stylesheet" href="/stylesheets/company_details.css">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="wrapper" style="background: url(../image/1.jpg);">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/Gst-Estimator">GST</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/company-details">Company Details</a></li>
+            <li><a href="/Gst-Estimator">GST Estimator</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<div class="content">
+		<div id="table" style="color:white;">
+			<center><h3><b>COMPANY DETAILS</b></h3></center>
+		</div>
+		<div id="signin">
+			<form action="/company-details" method="POST">
+				<div class="form-group">
+					<label for="name">Company Name:</label>
+					<input type="text" id="username" name="compName" autofocus required>
+				</div>
+        <div class="form-group">
+          <label for="username">City/State:</label>
+          <input type="text" id="username" name="city" required>
+        </div>
+        <div class="form-group">
+          <label for="username">Pin:</label>
+          <input type="text" id="username" name="pin" required>
+        </div>
+				<div class="form-group">
+  <label for="sel1">Annual Turnover:</label>
+  <select class="form-control" name="turn">
+    <option>Less than 5 crore (Micro)</option>
+    <option>5 crore to 75 crore(Small-scale)</option>
+    <option>75 crore to 250 crore(Medium-scale)</option>
+  </select>
+</div>
+<div class="form-group">
+<label for="sel1">Industry Type:</label>
+<select class="form-control" name="type">
+<option>Textile</option>
+<option>Sugar</option>
+<option>Steel</option>
+<option>Coffee/Tea</option>
+</select>
+</div>
+				<div class="form-group">
+					<input type="submit" value="Update" style="color:white;">
+				</div>
+			</form>
+			</div>
+</div>
+    </div>
+    	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Way Bill Entry Form</title>
+    <link rel="stylesheet" href="/stylesheets/ewaybill.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+    <div id="wrapper" style="background: url(./image/1.jpg);">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/entry">GST</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/Gst-Estimator">GST Estimatoy</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <div id="table">
+                <center>
+                    <h3 style="color:white;"><b>COMPANY DETAILS</b></h3>
+                </center>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">COMPANY NAME :<span style="color:white;font-size:15px;">
+                        <%=data.compName%> </span></label>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">CITY : <span style="color:white;font-size:20px;">
+                        <%=data.city %></span></label>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">PIN NUMBER : <span style="color:white;font-size:20px;">
+                       <%= data.pin%> </span></label>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">TURN OVER : <span style="color:white;font-size:20px;">
+                       <%= data.turn%></span></label>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">TYPE : <span style="color:white;font-size:20px;">
+                        <%=data.type %></span></label>
+            </div>
+            <br>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</body>
+
+</html>
